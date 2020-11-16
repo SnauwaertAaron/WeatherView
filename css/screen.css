@@ -1,0 +1,56 @@
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+    color: var(--color-front);
+    background-color: var(--color-back);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: App
+    ---
+    Main app wrapper
+*/
+
+.c-app {
+    max-width: 29em; /* 400 / 16px = 25em + 4em padding */
+    padding: 2em; /* 32 / 16px = 2em */
+    margin: 0 auto;
+    background-color: aqua;
+    /* display: flex;
+
+    min-height: 100vh;
+    flex-direction: column; */
+}
+
+/*
+    Component: Top logo
+    ---
+    Logo on top of the page
+*/
+
+.c-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
