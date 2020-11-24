@@ -6,8 +6,8 @@ const showResult = (queryResponse) => {
     htmlHumidity.innerText = `${queryResponse.main.humidity}%`;
     htmlWindSpeed.innerText = `${queryResponse.wind.speed} km/h`;
     htmlWinDirection.innerText = `${queryResponse.wind.deg}°`;
-    
 };
+
 
 const getAPI = async (cityname) => {
     // Eerst bouwen we onze url op
@@ -21,6 +21,21 @@ const getAPI = async (cityname) => {
     showResult(data);
 };
 
+
+
+
+const listenToSearchOnCity = function(){
+    let afgeschaftwaarde
+    const button = document.querySelector('.js-Cityinput');
+    button.addEventListener('click', function(){
+
+        getAPI(document.getElementById('CityText').value);
+    });
+  };
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     htmlBody = document.querySelector('body');
     htmlTemperature = document.querySelector('.js-Temperature');
@@ -29,6 +44,5 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlWindSpeed = document.querySelector('.js-WindSpeed');
     htmlWinDirection = document.querySelector('.js-WindDirection');
 
-    // 1 We will query the API with longitude and latitude.
-    getAPI("London");
+    listenToSearchOnCity();
 });
