@@ -10,13 +10,54 @@
     <link rel="stylesheet" href="css/screen.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">   
+    
+    <script src="./script/app.js"></script>
 
     <title>WeatherView</title>
 </head>
 <body>
     <main class="c-app">
         <img class="c-logo" src="./img/WeatherView_logo.png" alt="WeatherView Logo">
+        
+        <div class="c-cityinput">
+            <label class="c-cityinput_label" for="City"><b>Enter a city</b></label><br>
+            <input type="text" id="CityText" name="CityText"><br>
+            <input type="button" value="Search on entered city" id="CityButton" name="CityButton">
+        </div>
+
+        <div class="thermometer-wrap">
+            <img class="c-thermometer" src="./img/Thermometer.png">
+            <svg viewbox="0 0 100 200" width="5rem" height="15rem">
+                <!-- <polygon points="x,y x,y x,y" class="" /> -->
+                <polygon points="30,50 70,50 70,150 30,150" class="c-kwik" />             
+            </svg> 
+            <div class="c-temperature-text js-Temperature">0°C</div>
+        </div>
+
+        <div class="g-container">
+            <div class="g-row">
+                <div class="g-item">
+                    <div class="g-item_title">Wind chill</div><br>
+                    <div class="g-item_value js-WindChill">...</h3></div>
+                </div>
+                <div class="g-item">
+                    <div class="g-item_title">Humidity</div><br>
+                    <div class="g-item_value js-Humidity">...</div>
+                </div>
+            </div>
+            <div class="g-row">
+                <div class="g-item">
+                    <div class="g-item_title">Wind speed</div><br>
+                    <div class="g-item_value js-WindSpeed">...</div>
+                </div>
+                <div class="g-item">
+                    <div class="g-item_title">Wind direction</div><br>
+                    <div class="g-item_value js-WindDirection">...</div>
+                </div>
+
+            </div>     
+        </div>  
     </main>
 </body>
 </html>

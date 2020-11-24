@@ -1,4 +1,22 @@
 /*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --color-light: #edf2f4;
+    --color-dark: #2b2d42;
+
+    --color-front: var(--color-dark);
+    --color-back: var(--color-light);
+
+    /* opacity */
+
+    /* transitions */
+}
+
+
+/*------------------------------------*\
 #GENERIC
 \*------------------------------------*/
 
@@ -20,6 +38,10 @@ html {
 }
 
 
+.border{
+    border: 1px solid black;
+}
+
 
 /*------------------------------------*\
 #COMPONENTS
@@ -35,11 +57,6 @@ html {
     max-width: 29em; /* 400 / 16px = 25em + 4em padding */
     padding: 2em; /* 32 / 16px = 2em */
     margin: 0 auto;
-    background-color: aqua;
-    /* display: flex;
-
-    min-height: 100vh;
-    flex-direction: column; */
 }
 
 /*
@@ -52,5 +69,110 @@ html {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:100%;
+    width:75%;
 }
+
+.thermometer-wrap{
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    display: inline-block; /* Shrink container to img size */
+    transform: transform 150ms eas-in-out;
+}
+
+
+.c-temperature-text{
+    text-align: center;
+    font-weight: bold;
+    margin-top: -13%;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+/*
+    thermometer: thermometer object
+    ---
+    thermometer object settings
+*/
+
+
+.thermometer-wrap img{ /* for responsiveness */
+    display: block;
+    max-width:100%;
+    height: auto;
+}
+
+.thermometer-wrap img{
+    Position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.thermometer-wrap div{
+    Position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* .c-container_thermometer{
+    height:19rem;
+} */
+
+.c-kwik{
+    fill: #e6223f;
+}
+
+.c-cityinput{
+    text-align: center;
+    margin-top: 1em;
+}
+
+.c-cityinput_label{
+    font-size: 18px;
+    line-height: 24px;
+}
+
+input{
+    background-color: transparent;
+    border: 1px solid #2b2d42;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    margin-top: 0.5em;
+    width: 11rem;
+}
+
+input[type=text] {
+    width: 10rem;
+}
+
+/*
+    Grid: Grid components
+    ---
+    Grid on the bottom of the page
+*/
+
+.g-container{
+    width: 100%;
+}
+
+
+.g-row{
+    margin-top: 2rem;
+    Width: 100%;
+    display: flex;
+
+}
+
+.g-item{
+    width:50%;
+    text-align: center;
+}
+
+.g-item_title{
+    font-weight: bold;
+    display: inline;
+}
+
