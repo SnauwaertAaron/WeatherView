@@ -116,10 +116,9 @@ html {
     transform: translateX(-50%);
 }
 
-
-/* .c-container_thermometer{
-    height:19rem;
-} */
+.c-arrow{
+    fill: var(--color-dark);
+}
 
 .c-kwik{
     fill: #e6223f;
@@ -175,4 +174,3 @@ input[type=text] {
     font-weight: bold;
     display: inline;
 }
-
