@@ -10,6 +10,7 @@ body{
 
     --color-background: var(--color-light);
     --color-foreground:var(--color-dark);
+    --color-accent: var(--color-red);
 
     background: linear-gradient(to bottom right,#f7fcfe, #a4abb8);
 
@@ -24,6 +25,7 @@ body.dark{
 
     --color-background: var(--color-dark);
     --color-foreground:var(--color-light);
+    --color-accent: var(--color-red);
 
     background: linear-gradient(to bottom right,#2f2f31,#191821);
 }
@@ -203,8 +205,14 @@ html {
 
 .c-cityinput{
     text-align: center;
-    margin-top: -1.6rem;
+    margin-top: -1.6rem;  
 }
+
+input:focus {
+    outline-color: var(--color-foreground);
+    outline-width: 0px;
+  }
+
 
 .c-cityinput_label{
     font-size: 18px;
