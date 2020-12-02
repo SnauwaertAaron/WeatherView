@@ -32,6 +32,7 @@ const showResult = (queryResponse) => {
 
 // API opvragen aan de hand van de ingegeven stad
 const getAPI = async (cityname) => {
+    console.log("GetAPI");
     const endpoint = `http://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=0d83dff417d181fcf3def092e000cdf6&units=metric&lang=nl&cnt=1`;
 
     const data = await fetch(endpoint)
@@ -46,6 +47,7 @@ const listenToSearchOnCity = function(){
     const button = document.querySelector('.js-Cityinput');
     button.addEventListener('click', function(){
         getAPI(document.getElementById('CityText').value);
+        console.log("Click");
     });
   };
 
@@ -80,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlWindSpeed = document.querySelector('.js-WindSpeed');
 
     htmlArrow = document.querySelector('.js-WindDirection');
+
+    console.log("DOMContentLoaded");
 
     listenToThemeToggle();
     listenToSearchOnCity();
