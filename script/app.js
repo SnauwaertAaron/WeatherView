@@ -33,6 +33,7 @@ const showResult = (queryResponse) => {
 // API opvragen aan de hand van de ingegeven stad
 const getAPI = async (cityname) => {
     console.log("GetAPI");
+    console.log("Test test");
     const endpoint = `http://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=0d83dff417d181fcf3def092e000cdf6&units=metric&lang=nl&cnt=1`;
 
     const data = await fetch(endpoint)
