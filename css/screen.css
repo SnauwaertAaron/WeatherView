@@ -25,7 +25,7 @@ body.dark{
     --color-background: var(--color-dark);
     --color-foreground:var(--color-light);
 
-    background: linear-gradient(to bottom right,#2f2f31,#191822);
+    background: linear-gradient(to bottom right,#2f2f31,#191821);
 }
 
 /*------------------------------------*\
