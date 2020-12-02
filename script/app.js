@@ -1,3 +1,17 @@
+const kwik = (temp) => {
+    let abstemp = Math.abs(temp);
+    let y = 108;
+    if (temp > 0) {
+        y = y-(abstemp*2.2);
+    }
+    else{
+        y = y+(abstemp*2.2);
+    }
+
+    document.getElementById("js-Polygon").setAttribute("points", `30,${y} 70,${y} 70,250 30,250`);
+};
+
+
 // Opgehaalde waarden weergeven op pagina
 const showResult = (queryResponse) => {
     console.log(queryResponse);
@@ -9,8 +23,10 @@ const showResult = (queryResponse) => {
     let rotateAngle = `${queryResponse.wind.deg}`;
     console.log(rotateAngle);
 
-    arrow.setAttribute("transform", `rotate(${rotateAngle})`);
+    htmlArrow.setAttribute("transform", `rotate(${rotateAngle})`);
 
+
+    kwik(queryResponse.main.temp);
 };
 
 
@@ -33,6 +49,25 @@ const listenToSearchOnCity = function(){
     });
   };
 
+//Listen to theme toggle
+const listenToThemeToggle = function(){
+    let theme =0;
+    const toggle = document.getElementById('toggle');
+    toggle.addEventListener('change', function(){
+        document.body.classList.toggle('dark');
+
+        if (theme%2 != 0){ //oneven
+            document.getElementById("js-Logo").src = "./img/Lighttheme_logo.png";
+            document.getElementById("js-Thermometer").src = "./img/Lighttheme_Thermometer.png";   
+        }
+	    else{ //even
+            document.getElementById("js-Logo").src = "./img/Darktheme_logo.png";
+            document.getElementById("js-Thermometer").src = "./img/Darktheme_Thermometer.png";
+        }
+       
+        theme = theme+1;
+    });
+  };
 
 
 
@@ -43,8 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlWindChill = document.querySelector('.js-WindChill');
     htmlHumidity = document.querySelector('.js-Humidity');
     htmlWindSpeed = document.querySelector('.js-WindSpeed');
-    arrow = document.querySelector('.js-WindDirection');
 
+    htmlArrow = document.querySelector('.js-WindDirection');
 
+    listenToThemeToggle();
     listenToSearchOnCity();
 });

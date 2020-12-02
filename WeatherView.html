@@ -10,27 +10,36 @@
     <link rel="stylesheet" href="css/screen.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">   
-    
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
     <script src="./script/app.js"></script>
 
     <title>WeatherView</title>
 </head>
 <body>
     <main class="c-app">
-        <img class="c-logo" src="./img/WeatherView_logo.png" alt="WeatherView Logo">
-        
-        <div class="c-cityinput">
-            <label class="c-cityinput_label" for="City"><b>Enter a city</b></label><br>
-            <input type="text" id="CityText" name="CityText"><br>
-            <input class="js-Cityinput" type="button" value="Search on entered city" id="CityButton" name="CityButton">
-        </div>
+        <img class="c-logo" id="js-Logo" src="./img/Lighttheme_logo.png" alt="WeatherView Logo">
+
+            <div class="c-toggle">
+                <input type="Checkbox" class="c-toggle-checkbox" id="toggle">
+                <label for="toggle" class="c-toggle-label">
+                    <svg class ="c-toggle-moon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>
+                    <svg class="c-toggle-sun" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+                    <div class="c-toggle-ball"></div>
+                </label>
+            </div>
+            
+            <div class="c-cityinput">
+                <label class="c-cityinput_label" for="City"><b>Enter a city</b></label><br>
+                <input type="text" id="CityText" name="CityText"><br>
+                <input class="js-Cityinput" type="button" value="Search on entered city" id="CityButton" name="CityButton">
+            </div>
 
         <div class="thermometer-wrap">
-            <img class="c-thermometer" src="./img/Thermometer.png">
-            <svg viewbox="0 0 100 200" width="5rem" height="15rem">
+            <img class="c-thermometer" id="js-Thermometer" src="./img/Lighttheme_Thermometer.png">
+            <svg viewbox="0 0 100 265" width="5rem" height="15rem">
                 <!-- <polygon points="x,y x,y x,y" class="" /> -->
-                <polygon points="30,50 70,50 70,150 30,150" class="c-kwik" />             
+                <polygon id="js-Polygon" points="30,108 70,108 70,250 30,250" class="c-kwik" /> <!--inc 22 = 10°c-->        
             </svg> 
             <div class="c-temperature-text js-Temperature">0°C</div>
         </div>
