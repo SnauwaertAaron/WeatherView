@@ -19,13 +19,13 @@ body{
 body.dark{
     --color-light: #cccccc; 
 
-    --color-dark: #22181C;
+    --color-dark: #1b1822;
     --color-red: #BC2A2A;
 
     --color-background: var(--color-dark);
     --color-foreground:var(--color-light);
 
-    background: linear-gradient(to bottom right,#312F2F,#22181C);
+    background: linear-gradient(to bottom right,#2f2f31,#191822);
 }
 
 /*------------------------------------*\
