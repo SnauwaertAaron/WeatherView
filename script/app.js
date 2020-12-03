@@ -62,7 +62,7 @@ const getAPI = async (cityname) => {
 const listenToSearchOnCity = function(){
     const button = document.querySelector('.js-Cityinput');
     button.addEventListener('click', function(){
-        htmlError.innerText = "Enter a city";
+        htmlError.innerText = "";
         let CityInput = document.getElementById('CityText').value
 
         if(CityInput == null || CityInput == ""){
