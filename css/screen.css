@@ -12,8 +12,6 @@ body{
     --color-accent: var(--color-red);
 
     background: linear-gradient(to bottom right,#f7fcfe, #a4abb8);
-
-    transition: 1s;
 }
 
 body.dark{
@@ -54,11 +52,6 @@ html {
 
 .border{
     border: 1px solid var(--color-foreground);
-}
-
-
-.smooth{
-    transition: 4s;
 }
 
 /*------------------------------------*\
@@ -203,9 +196,6 @@ html {
     display: block;
     max-width:100%;
     height: auto;
-}
-
-.thermometer-wrap img{
     Position: absolute;
     top: 0;
     left: 0;
@@ -217,11 +207,6 @@ html {
     left: 50%;
     transform: translateX(-50%);
 }
-
-.thermometer-wrap svg{
-    color: var(--color-red);
-}
-
 .c-arrow{
     fill: var(--color-foreground);
     transition: 1s ease;
@@ -230,6 +215,12 @@ html {
 
 .c-kwik{
     fill: var(--color-red);
+    transition: 1s ease;
+
+    color: var(--color-red);
+
+    transform: scaleY(1); /*0.69=50° --- 0.69/5 = 0.138 per 10° --- 0.0138 per ° */
+    transform-origin: bottom center;
 }
 
 .c-cityinput{

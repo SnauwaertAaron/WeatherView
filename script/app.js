@@ -10,40 +10,41 @@ function cityFormat(CityInput){
 
 const kwik = (temp) => {
     let abstemp = Math.abs(temp);
-    let y = 108;
+    let scaleIncrement = 1;
     if (temp > 0) {
-        y = y-(abstemp*2.2);
+        scaleIncrement = scaleIncrement+(abstemp*0.0138);
     }
     else{
-        y = y+(abstemp*2.2);
+        scaleIncrement = scaleIncrement-(abstemp*0.0138);
     }
 
-    document.getElementById("js-Polygon").setAttribute("points", `30,${y} 70,${y} 70,250 30,250`);
+    //document.getElementById("js-Polygon").setAttribute("points", `30,${y} 70,${y} 70,250 30,250`);
+    document.getElementById('js-Polygon').style.transform = `scaleY(${scaleIncrement})`;
 };
 
 
 // Opgehaalde waarden weergeven op pagina
 const showResult = (queryResponse) => {
     console.log(queryResponse);
-    try
-    {
+    try{
         htmlTemperature.innerText = `${Math.round(queryResponse.main.temp)}°C`;
-    htmlWindChill.innerText = `${Math.round(queryResponse.main.feels_like)}°C`;
-    htmlHumidity.innerText = `${queryResponse.main.humidity}%`;
-    htmlWindSpeed.innerText = `${queryResponse.wind.speed} km/h`;
-    let rotateAngle = `${queryResponse.wind.deg}`;
-    console.log(rotateAngle);
+        htmlWindChill.innerText = `${Math.round(queryResponse.main.feels_like)}°C`;
+        htmlHumidity.innerText = `${queryResponse.main.humidity}%`;
+        htmlWindSpeed.innerText = `${queryResponse.wind.speed} km/h`;
+        let rotateAngle = `${queryResponse.wind.deg}`;
+        console.log(rotateAngle);
 
-    htmlArrow.setAttribute("transform", `rotate(${rotateAngle})`);
+        htmlArrow.setAttribute("transform", `rotate(${rotateAngle})`);
 
 
-    kwik(queryResponse.main.temp);
+        kwik(queryResponse.main.temp);
     }
-    catch
-    {
+    catch{
         htmlError.innerText= `Could not find a city named "${cityFormat(document.getElementById('CityText').value)}". Please try again in the regional language.`;
     }
     
+
+
 };
 
 
@@ -53,7 +54,7 @@ const getAPI = async (cityname) => {
 
     const data = await fetch(endpoint)
         .then((r) => r.json())
-        .catch((err) => console.error('An error occured', err));
+        .catch((err) => console.error('An error occured', err)); //
     showResult(data);
 };
 
