@@ -328,10 +328,16 @@ input[type=text] {
     media tags
 */
 
+@media only screen and (max-width: 1325px) {
+    .c-app-lp{
+        overflow: scroll;
+    }
+}
+
 @media only screen and (max-width: 600px) {
 
     .c-app-lp{
-        overflow: scroll;
+        overflow: auto;
     }
 
     .c-container-lp{
