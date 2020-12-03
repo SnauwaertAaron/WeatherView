@@ -46,12 +46,10 @@ html {
     background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100vh;
-    
-}
 
-.border{
-    border: 1px solid var(--color-foreground);
+    /* Overflow-y: scroll; */
+    height: 100vh;
+    max-height: 100vh;
 }
 
 /*------------------------------------*\
@@ -71,10 +69,11 @@ html {
     
 }
 
-.c-app-mockup{
-    max-width: 35em;
-    padding: 2em;
+.c-app-lp{
+    max-width: 75%;; /* 400 / 16px = 25em + 4em padding */
     margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /*
@@ -147,33 +146,63 @@ html {
 }
 
 /*
-    thermometer: thermometer object
+    mockup: mockup container
     ---
-    thermometer object settings
-
-    
+    mockup container settings
 */
 
-.c-mockup{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width:50%;
-    margin-top: 1.5em;
+
+.c-container-lp{
+    margin-top: 12.5%;
+    height: 75%;
+    max-height: 75%;
+    width: 100%;
 }
 
-.c-mockup-image{
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
+.c-mockup{
+    display: inline-block;
+    text-align: center;
+    /* display: inline-block;*/
+    width: 49%;
+    height: 75%;
 }
+.c-mockup img{
+    height:100%;
+}
+
+/*
+    mockup: mockup container
+    ---
+    mockup container settings
+*/
+
+.c-textblock{
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 0;
+    width: 49%;
+    height: 75%;
+    vertical-align:top;
+}
+
+.c-textblock img{
+    width:100%;
+}
+
+.c-textblock h1{
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.c-textblock p{
+    font-size: 20px;
+}
+
 
 /*
     thermometer: thermometer object
     ---
     thermometer object settings
-
-    
 */
 .c-temperature-text{
     text-align: center;
@@ -293,3 +322,49 @@ input[type=text] {
     font-weight: bold;
     display: inline;
 }
+
+
+/*
+    media tags
+*/
+
+@media only screen and (max-width: 600px) {
+    .c-container-lp{
+        margin-top:1em;
+        align-items: center;
+    }
+    
+    .c-mockup {
+      margin-top: 0;
+      align-self: center;
+      height: 75%;
+      width: 100%;
+    }
+
+    .c-mockup img{
+        height: 100%;
+    }
+
+
+    .c-textblock{
+        display: inline-block;
+        width: 100%;
+        height: 25%;
+    }
+    
+    .c-textblock img{
+        width:90%;
+    }
+    
+    .c-textblock h1{
+        margin:0;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    
+    .c-textblock p{
+        font-size: 15px;
+
+    }
+
+  }
