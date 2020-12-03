@@ -329,6 +329,11 @@ input[type=text] {
 */
 
 @media only screen and (max-width: 600px) {
+
+    .c-app-lp{
+        overflow: scroll;
+    }
+
     .c-container-lp{
         margin-top:1em;
         align-items: center;
@@ -364,7 +369,6 @@ input[type=text] {
     
     .c-textblock p{
         font-size: 15px;
-
     }
 
   }
