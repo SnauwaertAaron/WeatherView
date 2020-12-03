@@ -369,6 +369,7 @@ input[type=text] {
     
     .c-textblock p{
         font-size: 15px;
+        padding-bottom: 1rem;
     }
 
   }
