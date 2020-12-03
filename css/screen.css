@@ -2,7 +2,6 @@
 #Variables
 \*------------------------------------*/
 
-
 body{
     --color-light: #edf2f4;
     --color-dark: #1c1d2b;
@@ -77,6 +76,12 @@ html {
     padding: 2em; /* 32 / 16px = 2em */
     margin: 0 auto;
     
+}
+
+.c-app-mockup{
+    max-width: 35em;
+    padding: 2em;
+    margin: 0 auto;
 }
 
 /*
@@ -155,6 +160,28 @@ html {
 
     
 */
+
+.c-mockup{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    margin-top: 1.5em;
+}
+
+.c-mockup-image{
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+    thermometer: thermometer object
+    ---
+    thermometer object settings
+
+    
+*/
 .c-temperature-text{
     text-align: center;
     font-weight: bold;
@@ -197,6 +224,8 @@ html {
 
 .c-arrow{
     fill: var(--color-foreground);
+    transition: 1s ease;
+
 }
 
 .c-kwik{
@@ -215,8 +244,11 @@ input:focus {
 
 
 .c-cityinput_label{
+    display:inline-block;
+    width: 15rem;
     font-size: 18px;
     line-height: 24px;
+    font-weight: bold;
     color: var(--color-foreground);
 
 }

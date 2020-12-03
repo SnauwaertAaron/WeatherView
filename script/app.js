@@ -1,3 +1,13 @@
+// function capitalizeFirstLetter(string) {
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+//   }
+
+function cityFormat(CityInput){
+    CityInput.toLowerCase();
+    CityInput = CityInput.charAt(0).toUpperCase() + CityInput.slice(1);
+    return CityInput
+}
+
 const kwik = (temp) => {
     let abstemp = Math.abs(temp);
     let y = 108;
@@ -15,8 +25,9 @@ const kwik = (temp) => {
 // Opgehaalde waarden weergeven op pagina
 const showResult = (queryResponse) => {
     console.log(queryResponse);
-
-    htmlTemperature.innerText = `${Math.round(queryResponse.main.temp)}°C`;
+    try
+    {
+        htmlTemperature.innerText = `${Math.round(queryResponse.main.temp)}°C`;
     htmlWindChill.innerText = `${Math.round(queryResponse.main.feels_like)}°C`;
     htmlHumidity.innerText = `${queryResponse.main.humidity}%`;
     htmlWindSpeed.innerText = `${queryResponse.wind.speed} km/h`;
@@ -27,13 +38,17 @@ const showResult = (queryResponse) => {
 
 
     kwik(queryResponse.main.temp);
+    }
+    catch
+    {
+        htmlError.innerText= `Could not find a city named ${cityFormat(document.getElementById('CityText').value)}. Please try again in regional language.`;
+    }
+    
 };
 
 
 // API opvragen aan de hand van de ingegeven stad
 const getAPI = async (cityname) => {
-    console.log("GetAPI");
-    console.log("Test test");
     const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=0d83dff417d181fcf3def092e000cdf6&units=metric&lang=nl&cnt=1`;
 
     const data = await fetch(endpoint)
@@ -45,10 +60,18 @@ const getAPI = async (cityname) => {
 
 // Listener toevoegen aan de button
 const listenToSearchOnCity = function(){
+    htmlError.innerText = "Enter a city";
     const button = document.querySelector('.js-Cityinput');
     button.addEventListener('click', function(){
-        getAPI(document.getElementById('CityText').value);
-        console.log("Click");
+        //htmlError= document.querySelector('.js-Error');
+        let CityInput = document.getElementById('CityText').value
+
+        if(CityInput == null || CityInput == ""){
+            htmlError.innerText = "Please enter a city!";
+        }
+        else{
+                getAPI(cityFormat(CityInput));
+        }
     });
   };
 
@@ -81,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlWindChill = document.querySelector('.js-WindChill');
     htmlHumidity = document.querySelector('.js-Humidity');
     htmlWindSpeed = document.querySelector('.js-WindSpeed');
+
+    htmlError= document.querySelector('.js-Error');
 
     htmlArrow = document.querySelector('.js-WindDirection');
 
