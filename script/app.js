@@ -41,7 +41,7 @@ const showResult = (queryResponse) => {
     }
     catch
     {
-        htmlError.innerText= `Could not find a city named ${cityFormat(document.getElementById('CityText').value)}. Please try again in regional language.`;
+        htmlError.innerText= `Could not find a city named "${cityFormat(document.getElementById('CityText').value)}". Please try again in the regional language.`;
     }
     
 };
@@ -60,10 +60,9 @@ const getAPI = async (cityname) => {
 
 // Listener toevoegen aan de button
 const listenToSearchOnCity = function(){
-    htmlError.innerText = "Enter a city";
     const button = document.querySelector('.js-Cityinput');
     button.addEventListener('click', function(){
-        //htmlError= document.querySelector('.js-Error');
+        htmlError.innerText = "Enter a city";
         let CityInput = document.getElementById('CityText').value
 
         if(CityInput == null || CityInput == ""){
