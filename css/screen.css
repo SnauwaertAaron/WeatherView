@@ -360,7 +360,8 @@ input[type=text] {
     }
     
     .c-textblock img{
-        width:90%;
+        width:100% !important; 
+        margin-bottom: 1em;
     }
     
     .c-textblock h1{
