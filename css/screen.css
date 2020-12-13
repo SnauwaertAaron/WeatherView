@@ -270,15 +270,18 @@ input:focus {
     color: var(--color-foreground);
 }
 
-.c-cityinput_error{
-    display:inline-block;
-    width: 10rem;
-    font-size: 12px;
+.c-error{
+    color: var(--color-red);
     line-height: 16px;
     margin-bottom: 0.5rem;
-    color: var(--color-red);
-
+    font-size: 12px;
 }
+
+.c-error_cityinput{
+    display:inline-block;
+    width: 10rem;
+}
+
 
 input{
     background-color: transparent;
@@ -327,16 +330,9 @@ input[type=text] {
 /*
     media tags
 */
-
 @media only screen and (max-width: 1325px) {
-    .c-app-lp{
-        overflow: scroll;
-    }
-}
 
-@media only screen and (max-width: 600px) {
-
-    .c-app-lp{
+    html{
         overflow: auto;
     }
 
@@ -348,7 +344,7 @@ input[type=text] {
     .c-mockup {
       margin-top: 0;
       align-self: center;
-      height: 75%;
+      height: 65%;
       width: 100%;
     }
 
@@ -378,4 +374,10 @@ input[type=text] {
         padding-bottom: 1rem;
     }
 
+  }
+
+  @media only screen and (max-width: 600px) {
+      .c-app-lp{
+          overflow: scroll;
+      }
   }

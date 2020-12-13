@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Check the weather of any city with Weatherview.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/screen.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <script src="./script/app.js"></script>
 
     <title>WeatherView Coming Soon</title>
 </head>
@@ -19,15 +22,18 @@
         
         <div class="c-container-lp">
             <div class="c-mockup">
-                <img src="./img/WeatherView_mockup.png" alt="Weatherview Mockup">
+                <img src="./media/WeatherView_mockup.png" alt="Weatherview Mockup">
             </div>
             <div class="c-textblock">
-                <img src="./img/Lighttheme_logo.png" alt="WeatherView Logo">
+                <img src="./Media/Lighttheme_logo.png" alt="WeatherView Logo">
                 <h1>Check the weather from all over the world with WeatherView</h1>
                 <p> Simply enter a certain cityname and the site will display certain information about the local weather
                     such as the temperature, wind chill, humidity, wind speed and wind direction. This all in a clean, simplistic design. 
                     Functionalities as a dark mode are implemented for an optimal user experience.
                 </p>
+                <label class="c-error js-Notified"></label><br>
+                <input style="Width: 60%; margin-bottom: 1em;" class="js-EmailText" type="email" id="Email" name="Email" placeholder="example@email.com" required>
+                <input style="Width: 30%; Padding: 4px; margin-bottom: 1em;" class="c-notify js-EmailInput" type="button" value="Notify me" id="Notify" name="Notifiy">
             </div>
         </div>
             

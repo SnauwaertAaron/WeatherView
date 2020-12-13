@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Check the weather of any city with Weatherview.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./media/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/screen.css">
@@ -18,7 +19,7 @@
 </head>
 <body>
     <main class="c-app">
-        <img class="c-logo" id="js-Logo" src="./img/Lighttheme_logo.png" alt="WeatherView Logo">
+        <img class="c-logo" id="js-Logo" src="./media/Lighttheme_logo.png" alt="WeatherView Logo">
 
             <div class="c-toggle">
                 <input type="Checkbox" class="c-toggle-checkbox" id="toggle">
@@ -30,14 +31,14 @@
             </div>
             
             <div class="c-cityinput">
-                <label class="c-cityinput_error js-Error" for="City"></label><br>
+                <label class=" c-error c-error_cityinput js-Error" for="City"></label><br>
                 <label class="c-cityinput_label" for="City">Enter a city</label><br>
-                <input type="text" id="CityText" name="CityText" required><br>
+                <input  type="text" id="CityText" name="CityText" placeholder="Ex. London" onfocus="this.value=''" required><br>
                 <input class="js-Cityinput" type="button" value="Search on entered city" id="CityButton" name="CityButton">
             </div>
 
         <div class="thermometer-wrap">
-            <img class="c-thermometer" id="js-Thermometer" src="./img/Lighttheme_Thermometer.png">
+            <img class="c-thermometer" id="js-Thermometer" src="./media/Lighttheme_Thermometer.png">
             <svg viewbox="0 0 100 265" width="5rem" height="15rem">
                 <!-- <polygon points="x,y x,y x,y" class="" /> -->
                 <polygon class="c-kwik" id="js-Polygon" points="30,108 70,108 70,250 30,250"  /> <!--inc 22 = 10°c-->        

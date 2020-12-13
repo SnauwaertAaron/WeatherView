@@ -83,34 +83,56 @@ const listenToThemeToggle = function(){
         document.body.classList.toggle('dark');
 
         if (theme%2 != 0){ //oneven
-            document.getElementById("js-Logo").src = "./img/Lighttheme_logo.png";
-            document.getElementById("js-Thermometer").src = "./img/Lighttheme_Thermometer.png";   
+            document.getElementById("js-Logo").src = "./media/Lighttheme_logo.png";
+            document.getElementById("js-Thermometer").src = "./media/Lighttheme_Thermometer.png";   
         }
 	    else{ //even
-            document.getElementById("js-Logo").src = "./img/Darktheme_logo.png";
-            document.getElementById("js-Thermometer").src = "./img/Darktheme_Thermometer.png";
+            document.getElementById("js-Logo").src = "./media/Darktheme_logo.png";
+            document.getElementById("js-Thermometer").src = "./media/Darktheme_Thermometer.png";
         }
        
         theme = theme+1;
     });
   };
 
+// Listener toevoegen aan de button
+const listenToNotify = function(){
+    const button = document.querySelector('.js-EmailInput');
+    button.addEventListener('click', function(){
+        document.getElementById('Email').value = '';
+        htmlNotified.innerText = "Thank you for your interest in WeatherView. You will be notified when the app launches.";
+
+    });
+  };
 
 
 // DOMContentloaded aanmaken
 document.addEventListener('DOMContentLoaded', function () {
     htmlBody = document.querySelector('body');
-    htmlTemperature = document.querySelector('.js-Temperature');
-    htmlWindChill = document.querySelector('.js-WindChill');
-    htmlHumidity = document.querySelector('.js-Humidity');
-    htmlWindSpeed = document.querySelector('.js-WindSpeed');
+        htmlTemperature = document.querySelector('.js-Temperature');
+        htmlWindChill = document.querySelector('.js-WindChill');
+        htmlHumidity = document.querySelector('.js-Humidity');
+        htmlWindSpeed = document.querySelector('.js-WindSpeed');
 
-    htmlError= document.querySelector('.js-Error');
+        htmlError= document.querySelector('.js-Error');
 
-    htmlArrow = document.querySelector('.js-WindDirection');
+        htmlArrow = document.querySelector('.js-WindDirection');
 
-    console.log("DOMContentLoaded");
+        htmlEmail = document.querySelector('.js-EmailInput');
+        htmlNotified = document.querySelector('.js-Notified');
 
-    listenToThemeToggle();
-    listenToSearchOnCity();
+        console.log("DOMContentLoaded");
+
+
+    if(htmlTemperature)
+    {
+        listenToThemeToggle();
+        listenToSearchOnCity();
+    }
+    if(htmlEmail)
+    {
+        listenToNotify();
+        console.log("LP")
+    }
+    
 });
